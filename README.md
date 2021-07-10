@@ -16,6 +16,24 @@ make all
 Please ensure that `LLVMCONFIG` is set to the correct version of `llvm-config` as stated in
 dependencies.
 
+## Front Ends
+Jlm supports the following front ends:
+
+* LLVM
+
+## Back Ends
+Jlm supports the following back ends:
+
+* LLVM
+* XML
+
+## Tools
+
+Jlm provides the following tools
+
+1. `jlm-opt`: An optimizer that uses the 
+1. `jlc`: A C compiler that uses Clang to produce LLVM IR, 
+
 ## Publications
 An introduction to the RVSDG and the optimizations supported by jlm can be found in the 
 following articles:
