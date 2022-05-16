@@ -1,3 +1,4 @@
 TESTS += \
+    libjlm/opt/alias-analyses/TestAdvancedEncoder \
 	libjlm/opt/alias-analyses/TestBasicEncoder \
 	libjlm/opt/alias-analyses/TestSteensgaard \

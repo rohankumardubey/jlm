@@ -3,6 +3,7 @@
  * See COPYING for terms of redistribution.
  */
 
+#include <jlm/opt/alias-analyses/AdvancedEncoder.hpp>
 #include <jlm/opt/alias-analyses/BasicEncoder.hpp>
 #include <jlm/opt/alias-analyses/Optimization.hpp>
 #include <jlm/opt/alias-analyses/PointsToGraph.hpp>
@@ -23,6 +24,20 @@ SteensgaardBasic::run(
 
   BasicEncoder encoder(*pointsToGraph);
   encoder.Encode(rvsdgModule, statisticsDescriptor);
+}
+
+SteensgaardAdvanced::~SteensgaardAdvanced() noexcept
+= default;
+
+void
+SteensgaardAdvanced::run(
+  RvsdgModule & rvsdgModule,
+  const StatisticsDescriptor & statisticsDescriptor)
+{
+  Steensgaard steensgaard;
+  auto pointsToGraph = steensgaard.Analyze(rvsdgModule, statisticsDescriptor);
+
+  AdvancedEncoder::Encode(*pointsToGraph, rvsdgModule, statisticsDescriptor);
 }
 
 }

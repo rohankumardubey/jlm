@@ -25,6 +25,21 @@ public:
     const StatisticsDescriptor & statisticsDescriptor) override;
 };
 
+/** \brief Steensgaard alias analysis with advanced memory state encoding
+ *
+ * @see Steensgaard
+ * @see AdvancedEncoder
+ */
+class SteensgaardAdvanced final : public optimization {
+public:
+  ~SteensgaardAdvanced() noexcept override;
+
+  void
+  run(
+    RvsdgModule & rvsdgModule,
+    const StatisticsDescriptor & statisticsDescriptor) override;
+};
+
 }
 
 #endif
